@@ -1,7 +1,7 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import AppLayout from '_layouts/App';
-import { getVideos } from '_redux/actions/video';
+import { getVideos, selectVideo } from '_redux/actions/video';
 
 export class App extends PureComponent {
 
@@ -36,6 +36,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   getVideos,
+  selectVideo,
 };
 
 export default connect(

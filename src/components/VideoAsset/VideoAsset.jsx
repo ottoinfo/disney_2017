@@ -20,7 +20,7 @@ function formatDuration(time) {
   return `${parseInt(array[0])} hours ${array[1]} minutes`
 }
 
-const VideoAsset = ({ video, handleToggleVideo}) => (
+const VideoAsset = ({ video, handleSelectVideo, isSelected}) => (
   <div className={styles.VideoAsset}>
     <img src={video.image} alt={video.title} className={styles.img} />
 
@@ -31,7 +31,7 @@ const VideoAsset = ({ video, handleToggleVideo}) => (
       </div>
 
       <div className={styles.bottom}>
-        <div className={styles.add}>Add to Watchlist</div>
+        <div className={styles.add} onClick={()=> handleSelectVideo(video.slug)}>{ isSelected ? 'Remove' : 'Add' } to Watchlist</div>
 
         <div className={styles.meta}>
           <p>Release Date: {formatDate(video.date)}</p>
@@ -44,7 +44,7 @@ const VideoAsset = ({ video, handleToggleVideo}) => (
 
 VideoAsset.propTypes = {
   video: PropTypes.object,
-  handleToggleVideo: PropTypes.func,
+  handleAddVideo: PropTypes.func,
 };
 
 export default VideoAsset;

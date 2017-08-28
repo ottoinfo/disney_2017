@@ -5,6 +5,7 @@ export const initialState = fromJS({
     isLoading: false,
     error: null,
     items: [],
+    selected: {},
 });
 
 export default createReducer(initialState, {
@@ -20,4 +21,10 @@ export default createReducer(initialState, {
         state
             .set('isLoading', false)
     ),
+    [actions.SELECT_VIDEO]: (state, { payload: videoSlug }) => (
+        state.setIn(
+            [ 'selected', videoSlug ],
+            !state.getIn( [ 'selected', videoSlug ])
+        )
+    )
 });

@@ -3,15 +3,16 @@ import Header from '_views/Header';
 import VideoAsset from '_components/VideoAsset';
 import styles from './App.scss';
 
-const App = ({ history, title, children, items, handleToggleVideo }) => {
+const App = ({ history, title, children, items, selectVideo, selected }) => {
   return (
     <div className={styles.App}>
       <Header history={history} title={title} />
-      {children}
 
-      {items.map((video) => (
-        <VideoAsset key={video.slug} video={video} handleToggleVideo={handleToggleVideo} />
-      ))}
+      <div className={styles.content}>
+        {items.map((video) => (
+          <VideoAsset key={video.slug} video={video} handleSelectVideo={selectVideo} isSelected={selected[video.slug]} />
+        ))}
+      </div>
     </div>
   );
 };

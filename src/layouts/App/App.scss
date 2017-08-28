@@ -3,3 +3,9 @@
 .App {
   background: $background;
 }
+
+.content {
+  @extend %flex-center;
+  width: 100%;
+  padding: 20px;
+}
