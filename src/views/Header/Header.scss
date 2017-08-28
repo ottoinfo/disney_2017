@@ -1,0 +1,25 @@
+@import 'mixins';
+
+.Header {
+  @extend %flex-justify;
+  width: 100%;
+  padding: 20px;
+  background: $header-background;
+  color: $header-color;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.link {
+  cursor: pointer;
+  + .link {
+    margin-left: 15px;
+    &:before {
+      content: '|';
+      display: inline-block;
+      padding-right: 15px;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+coverage/
+private_modules/*
+node_modules/*
+config/*
+tests/*
+*.json
+blueprints/
+public

@@ -1,0 +1,24 @@
+root = true
+
+# Enusure line endings are Unix style
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Ensure charset is utf-8
+[*.{js, jsx, yaml}]
+charset = utf-8
+
+# Ensure 4 space indents for javascrtpt
+[*.{js, jsx, yaml}]
+indent_style = space
+indent_size = 2
+
+# Ensure JSON documents have correct indentation
+[*.json]
+indent_style = space
+indent_size = 2
+
+[src/spi/swagger/swagger.yaml]
+indent_style = space
+indent_size = 2
