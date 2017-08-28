@@ -1,0 +1,55 @@
+@import 'mixins';
+
+.VideoAsset {
+  @extend %flex-justify;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.img {
+  @extend .sixteen-nine;
+  height: 120px;
+  border: $border;
+}
+
+.info {
+  padding-left: 30px;
+  @extend %flex-start;
+  flex-grow: 1;
+  .top {
+    @extend %flex-justify;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    .title{
+      font-size: 1.25em;
+      padding-right: 15px;
+    }
+    .rating {
+      text-align: center;
+      font-size: .857em;
+      border: $border;
+      border-radius: 7px;
+      padding: 5px 20px;
+      color: $rating-color;
+      background: $rating-background;
+    }
+  }
+  .bottom {
+    @extend %flex-justify;
+    justify-content: flex-start;
+
+    .add {
+      text-align: center;
+      padding: 5px 20px;
+      border-radius: 7px;
+      color: $add-color;
+      background: $add-background;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+
+    .meta {}
+  }
+}
+

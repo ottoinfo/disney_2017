@@ -4,7 +4,6 @@ import styles from './App.scss';
 const App = ({ items }) => (
   <div className={styles.App}>
     App
-    {items}
   </div>
 );
 
