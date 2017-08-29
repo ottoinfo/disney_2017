@@ -2,7 +2,7 @@
 
 ## User Stories
 
-1. As a user  
+1. As a user ( COMPLETED )
 I want to be able to search for movies by name
 
 1. As a user  
@@ -30,7 +30,7 @@ I want to have run time specified in hours and minutes.
 Assuming I am logged in  
 I want to be able to toggle movies in my Watchlist
 
-1. As a user 
+1. As a user  ( COMPLETED )
 I want to be able to navigate to a movie detail page.
 
 What I am using
