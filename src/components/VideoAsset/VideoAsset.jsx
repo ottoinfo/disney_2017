@@ -20,9 +20,9 @@ function formatDuration(time) {
   return `${parseInt(array[0])} hours ${array[1]} minutes`
 }
 
-const VideoAsset = ({ video, handleSelectVideo, isSelected}) => (
+const VideoAsset = ({ video, handleSelectVideo, isSelected, viewDetails, history }) => (
   <div className={styles.VideoAsset}>
-    <img src={video.image} alt={video.title} className={styles.img} />
+    <img src={`/${video.image}`} alt={video.title} className={styles.img}/>
 
     <div className={styles.info}>
       <div className={styles.top}>
@@ -38,6 +38,12 @@ const VideoAsset = ({ video, handleSelectVideo, isSelected}) => (
           <p>Run Time: {formatDuration(video.run_time)}</p>
         </div>
       </div>
+
+      {viewDetails ? ( 
+        <div className={styles.add} onClick={()=> history.push(`/movie/${video.slug}`) }>View Details</div>
+      ) : (
+        <div className={styles.add} onClick={()=> history.goBack() }>Leave Details</div>
+      ) }
     </div>
   </div>
 );

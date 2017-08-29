@@ -6,6 +6,8 @@ export const initialState = fromJS({
     error: null,
     items: [],
     selected: {},
+    slug: null,
+    search: '',
 });
 
 export default createReducer(initialState, {
@@ -26,5 +28,14 @@ export default createReducer(initialState, {
             [ 'selected', videoSlug ],
             !state.getIn( [ 'selected', videoSlug ])
         )
-    )
+    ),
+    [actions.SET_SLUG]: (state, { payload: videoSlug }) => (
+        state.set('slug', videoSlug)
+    ),
+    [actions.SET_SEARCH]: (state, { payload: search }) => (
+        state.set('search', search)
+    ),
+    [actions.CLEAR_SEARCH]: (state) => (
+        state.set('search', '')
+    ),
 });

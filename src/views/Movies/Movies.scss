@@ -1,0 +1,6 @@
+@import 'mixins';
+
+.Movies {
+  @extend %flex-center;
+  width: 100%;
+}

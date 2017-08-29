@@ -1,0 +1,22 @@
+@import 'mixins';
+
+.Search {
+  position: relative;
+  display: inline-block;
+  p {
+    position: absolute;
+    font-size: 0.857em;
+    top: 2px;
+    left: 10px;
+    &:last-child {
+      right: 0px;
+      left: inherit;
+      cursor: pointer;
+    }
+  }
+  input {
+    border: $border;
+    font-size: 0.875em;
+    padding: 5px 10px;
+  }
+}

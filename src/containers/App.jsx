@@ -5,39 +5,19 @@ import { getVideos, selectVideo } from '_redux/actions/video';
 
 export class App extends PureComponent {
 
-  componentWillMount() {
-    const { videos, getVideos } = this.props;
-    if (!videos || !videos.length) {
-      getVideos();
-    }
-  }
-
   render() {
     const { props } = this;
-
-    if (!props.items.length) {
-      return (<p>Loading</p>)
-    }
-
     return (
       <AppLayout {...props} />
     );
   }
 }
 
-App.propTypes = {
-  items: PropTypes.array,
-  getVideos: PropTypes.func.isRequired,
-};
+App.propTypes = {};
 
-const mapStateToProps = (state) => ({
-  ...state.video.toJS()
-});
+const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {
-  getVideos,
-  selectVideo,
-};
+const mapDispatchToProps = {};
 
 export default connect(
   mapStateToProps,
